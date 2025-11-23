@@ -11,12 +11,21 @@
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
 
     <link rel="stylesheet" href="{% static 'css/globals.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 </head>
 
 <body>
-    <h1>Projeto Fortim</h1>
+    <div class="introducao">
+        <div class="text-container">
+            <h1 class="c-white bold">Projeto de base comunitária: <span class="c-yellow">Fortim</span></h1>
+            <h4 class="c-gray-1">Breve descrição do projeto</h4>
+            <a href="" class="btn secondary">Responder formulário</a>
+        </div>
+
+        <img src="{% static 'images/favicon.png' %}" alt="Logo do projeto" class="logo">
+    </div>
 </body>
 
 </html>
