@@ -39,6 +39,15 @@
 }
 
 /* Tipografia */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, button, input {
+    font-weight: 500;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
 h1 {
     font-size: 44px;
 }
@@ -115,6 +124,26 @@ h6 {
 
 .c-green1 {
     color: var(--green1);
+}
+
+.c-white {
+    color: var(--white);
+}
+
+.c-white1 {
+    color: var(--white1);
+}
+
+.c-yellow {
+    color: var(--yellow);
+}
+
+.c-yellow-1 {
+    color: var(--yellow-1);
+}
+
+.c-yellow1 {
+    color: var(--yellow1);
 }
 
 

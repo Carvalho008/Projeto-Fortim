@@ -7,8 +7,10 @@
 
     font-weight: bold;
     font-size: 16px;
+    text-align: center;
 
     background: none;
+    text-decoration: none;
     border: none;
     border-radius: 50px;
 }
