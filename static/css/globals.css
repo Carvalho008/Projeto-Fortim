@@ -43,7 +43,14 @@ body {
     font-family: 'Open Sans', Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, button, input {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input {
     font-weight: 500;
     font-family: 'Open Sans', Arial, sans-serif;
 }
@@ -79,6 +86,10 @@ h6 {
 /* Outros */
 .bold {
     font-weight: bold;
+}
+
+img {
+    user-select: none;
 }
 
 /* Cores de textos */
