@@ -40,7 +40,100 @@
 }
 
 /* Tempo e forma de transição */
-.bnt, .primary, .primary:hover, .secondary, .secondary:hover {
+.bnt,
+.primary,
+.primary:hover,
+.secondary,
+.secondary:hover {
+    transition: .5s;
+}
+
+/* CARD DE EQUIPE */
+.equipe-card {
+    flex: 1;
+    max-width: 350px;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+
+    background-color: var(--yellow-1);
+    border: 1.5px solid var(--yellow1);
+    border-radius: var(--space-xs);
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.equipe-card:hover {
+    transform: scale(1.1);
+}
+
+.equipe-card,
+.equipe-card:hover {
+    transition: .3s;
+}
+
+.equipe-card .profile-icon {
+    aspect-ratio: 1 / 1.5;
+    height: 100%;
+    background-color: var(--gray-1);
+    border: 1.5px solid var(--yellow1);
+    border-radius: 0 50% 50% 0;
+}
+
+.equipe-card .infos-container {
+    flex: 1;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    padding: var(--space-m) var(--space-m) var(--space-m) 0;
+}
+
+.equipe-card h6 {
+    width: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.equipe-card .infos-container h6:nth-of-type(1) {
+    color: var(--black);
+    font-weight: bold;
+}
+
+.equipe-card .infos-container h6:nth-of-type(2) {
+    color: var(--gray);
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.equipe-card .curriculo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xs);
+
+    background-color: var(--blue-1);
+    border-radius: 50%;
+
+    font-size: 1.2rem;
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+.equipe-card .curriculo-btn:hover {
+    background-color: var(--blue1);
+    color: var(--yellow);
+}
+
+.equipe-card .curriculo-btn,
+.equipe-card .curriculo-btn:hover {
     transition: .5s;
 }
 
