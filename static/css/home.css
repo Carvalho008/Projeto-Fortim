@@ -1,3 +1,4 @@
+/* INTRODUÇÃO */
 .introducao {
     display: flex;
     align-items: center;
@@ -47,6 +48,109 @@
     min-width: 150px;
 }
 
+/* EQUIPE */
+.equipe-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--yellow);
+    overflow: hidden;
+}
+
+.equipe-section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-xxl);
+    gap: var(--space-m);
+
+    position: relative;
+    overflow-y: visible;
+    z-index: 0;
+}
+
+.equipe-section::before,
+.equipe-section::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    pointer-events: none;
+    background-color: var(--yellow1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.equipe-section::before {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+.equipe-section::after {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.membro-show {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-l);
+}
+
+.membro-show #profileIcon {
+    aspect-ratio: 1.5 / 1;
+    flex: 1;
+    flex-shrink: 0;
+    max-width: 500px;
+    min-width: 200px;
+    background-color: var(--gray-1);
+    border-radius: var(--space-xxs);
+    box-shadow: var(--space-xxs) var(--space-xxs) var(--yellow-1);
+    overflow: hidden;
+}
+
+.membro-show .infos-container {
+    flex: 1;
+    flex-shrink: 0;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.membros-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-l);
+}
+
+.equipe-section-wrapper .top-triangle,
+.equipe-section-wrapper .bottom-triangle {
+    width: 100%;
+    height: var(--space-xl);
+    z-index: 1;
+}
+
+.equipe-section-wrapper .top-triangle {
+    background-color: var(--blue);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.equipe-section-wrapper .bottom-triangle {
+    background-color: var(--white1);
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+}
+
+.equipe-section .observation-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* RESPONSIVIDADE */
 @media (max-width: 800px) {
     .introducao {
         justify-content: center;
@@ -54,5 +158,10 @@
 
     .introducao .logo {
         max-width: 200px;
+    }
+
+    .equipe-section::before,
+    .equipe-section::after {
+        width: 70%;
     }
 }

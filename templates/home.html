@@ -26,6 +26,67 @@
 
         <img src="{% static 'images/favicon.png' %}" alt="Logo do projeto" class="logo">
     </div>
+
+    <div class="equipe-section-wrapper">
+        <div class="top-triangle"></div>
+        <div class="equipe-section">
+            <div class="membro-show">
+                <img src="" alt="" id="profileIcon" title="Foto do pesquisador">
+                <div class="infos-container">
+                    <h3 class="c-blue bold" id="memberShowName">Nome do pesquisador</h3>
+                    <h4 class="c-blue-1" id="memberShowDescription">Descrição/autobiografia</h4>
+                    <a href="" class="btn primary" id="memberShowButton" title="Currículo do pesquisador">Ver
+                        currículo</a>
+                </div>
+            </div>
+            <div class="membros-container">
+                <div class="equipe-card" index="0" indicator="1">
+                    <img src="" alt="" class="profile-icon" title="Foto do pesquisador 1">
+                    <div class="infos-container">
+                        <h6>Nome 1</h6>
+                        <h6>Descrição Pesquisador 1</h6>
+                        <a href="" class="curriculo-btn" title="Currículo do pesquisador 1" target="_blank"
+                            rel="noopener noreferrer"><ion-icon name="list-box"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="equipe-card" index="1" indicator="2">
+                    <img src="" alt="" class="profile-icon" title="Foto do pesquisador 2">
+                    <div class="infos-container">
+                        <h6>Nome 2</h6>
+                        <h6>Descrição Pesquisador 2</h6>
+                        <a href="" class="curriculo-btn" title="Currículo do pesquisador 2" target="_blank"
+                            rel="noopener noreferrer"><ion-icon name="list-box"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="equipe-card" index="2" indicator="3">
+                    <img src="" alt="" class="profile-icon" title="Foto do pesquisador 3">
+                    <div class="infos-container">
+                        <h6>Nome 3</h6>
+                        <h6>Descrição Pesquisador 3</h6>
+                        <a href="" class="curriculo-btn" title="Currículo do pesquisador 3" target="_blank"
+                            rel="noopener noreferrer"><ion-icon name="list-box"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="equipe-card" index="3" indicator="4">
+                    <img src="" alt="" class="profile-icon" title="Foto do pesquisador 4">
+                    <div class="infos-container">
+                        <h6>Nome 4</h6>
+                        <h6>Descrição Pesquisador 4</h6>
+                        <a href="" class="curriculo-btn" title="Currículo do pesquisador 4" target="_blank"
+                            rel="noopener noreferrer"><ion-icon name="list-box"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+            <div class="observation-container">
+                <h6 class="c-blue-1">Clique nos cards para ver as informações dos pesquisadores por completo*</h6>
+            </div>
+        </div>
+        <div class="bottom-triangle"></div>
+    </div>
+
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="{% static 'js/equipeHandler.js' %}"></script>
 </body>
 
 </html>
