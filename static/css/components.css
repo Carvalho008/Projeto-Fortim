@@ -142,7 +142,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    min-width: 250px;
+    min-width: 200px;
     min-width: 350px;
     padding: var(--space-s) var(--space-m);
     gap: var(--space-xs);
