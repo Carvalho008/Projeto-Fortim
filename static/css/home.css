@@ -54,6 +54,7 @@
     flex-direction: column;
     background-color: var(--yellow);
     overflow: hidden;
+    margin-top: -1px;
 }
 
 .equipe-section {
@@ -149,6 +150,58 @@
     text-align: center;
 }
 
+/* RODAPÉ */
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-xxl);
+    gap: var(--space-l);
+    background-color: var(--white1);
+    margin-top: -1px;
+}
+
+.apoiadores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+}
+
+.realizacao {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-l);
+    gap: var(--space-xs);
+    background-color: var(--white);
+    border-radius: var(--space-xs);
+    overflow: hidden;
+}
+
+.realizacao .title-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.realizacao .title-container .divisor {
+    width: 100%;
+    height: 3px;
+    background-color: var(--white1);
+    border-radius: 3px;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+}
+
+.logos-container img {
+    flex: 1;
+    aspect-ratio: 1.5 / 1;
+    min-width: 300px;
+    max-width: 500px;
+}
 
 /* RESPONSIVIDADE */
 @media (max-width: 800px) {
