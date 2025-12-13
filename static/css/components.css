@@ -137,9 +137,49 @@
     transition: .5s;
 }
 
+/* CARD DE APOIADOR */
+.apoiador-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+    min-width: 350px;
+    padding: var(--space-s) var(--space-m);
+    gap: var(--space-xs);
+    background-color: var(--white);
+    border-radius: var(--space-xs);
+    overflow: hidden;
+}
+
+.apoiador-card img {
+    aspect-ratio: 1 / 1;
+    width: 70px;
+    background-color: var(--gray-1);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.apoiador-card .infos-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+}
+
+.apoiador-card .infos-container h5 {
+    color: var(--dark);
+    font-weight: bold;
+}
+
+.apoiador-card .infos-container p {
+    color: var(--gray);
+}
 
 @media (max-width: 800px) {
     .btn {
         font-size: 15px;
+    }
+
+    .apoiador-card img {
+        width: 60px;
     }
 }
