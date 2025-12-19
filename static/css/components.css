@@ -77,6 +77,7 @@
 .equipe-card .profile-icon {
     aspect-ratio: 1 / 1.5;
     height: 100%;
+    max-height: 130px;
     background-color: var(--gray-1);
     border: 1.5px solid var(--yellow1);
     border-radius: 0 50% 50% 0;
@@ -149,6 +150,8 @@
     background-color: var(--white);
     border-radius: var(--space-xs);
     overflow: hidden;
+
+    text-decoration: none;
 }
 
 .apoiador-card img {

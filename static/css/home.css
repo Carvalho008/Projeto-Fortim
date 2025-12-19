@@ -105,10 +105,12 @@
     flex-shrink: 0;
     max-width: 500px;
     min-width: 200px;
-    background-color: var(--gray-1);
+    /* background-color: var(--gray-1); */
     border-radius: var(--space-xxs);
-    box-shadow: var(--space-xxs) var(--space-xxs) var(--yellow-1);
+    /* box-shadow: var(--space-xxs) var(--space-xxs) var(--yellow-1); */
     overflow: hidden;
+
+    object-fit: contain;
 }
 
 .membro-show .infos-container {

@@ -8,37 +8,37 @@ let idAtual = 0
 const listaEquipe = [
     {
         nome: 'Márcia Vieira',
-        descricao: 'Professora e Orientadora',
-        imagem: '',
-        linkCurriculo: '',
+        descricao: 'Professora e Orientadora do projeto. Doutora em Educação pela Universidade Estadual Paulista Júlio de Mesquita Filho - UNESP (2017),Graduada em Administração pela UFC (1993), Mestra em Logística e Pesq. Operacional pela UFC,(2009),Especialista em Formação Pedagógica para Docência Profissional e Tecnológica pelo IFCE (2020) e Formação em Procedimentos Básicos para o atendimento Educacional Especializado (AEE) pelo IFTM (2018). ',
+        imagem: 'marcia.gif',
+        linkCurriculo: 'http://lattes.cnpq.br/4324545790655825',
         id: 0,
     },
     {
         nome: 'Lian Carvalho',
-        descricao: 'Integrado em Informática',
-        imagem: '',
-        linkCurriculo: '',
+        descricao: 'Pesquisador FUNCAP PROGRAMA JOVEM CIENTISTA DA PESCA ARTESANAL, Técnico em Informática pelo IFCE Campus Aracati(2023-2025)',
+        imagem: 'lian.gif',
+        linkCurriculo: 'http://lattes.cnpq.br/6417304866666966',
         id: 1,
     },
     {
         nome: 'Ana Luisa',
-        descricao: 'Integrado em Aquicultura',
-        imagem: '',
-        linkCurriculo: '',
+        descricao: 'Cursando Ensino técnico integrado em aquicultura pelo Instituto Federal Do Ceará. Pesquisadora FUNCAP PROGRAMA JOVEM CIENTISTA DA PESCA ARTESANAL ',
+        imagem: 'luisa.gif',
+        linkCurriculo: 'http://lattes.cnpq.br/3521824364373872',
         id: 2,
     },
     {
         nome: 'Maria Clara',
-        descricao: 'Integrado em Química - 1',
-        imagem: '',
-        linkCurriculo: '',
+        descricao: 'Sou Maria Clara de Souza Morais, estudante do Ensino Médio com Técnico Integrado em Química em tempo integral no IFCE - Campus Aracati. Atuo como bolsista da FUNCAP no Programa Jovem Cientista da Pesca Artesanal, onde busco oportunidades para aplicar e expandir meus conhecimentos na área.',
+        imagem: 'clara.gif',
+        linkCurriculo: 'http://lattes.cnpq.br/9241898983968558',
         id: 3,
     },
     {
-        nome: 'Gabriele',
-        descricao: 'Integrado em Química - 2',
-        imagem: '',
-        linkCurriculo: '',
+        nome: 'Maria Gabrielle',
+        descricao: 'Cursando Ensino técnico integrado em Química pelo Instituto Federal do Ceará. PESQUISADOR FUNCAP PROGRAMA JOVEM CIENTISTA DA PESCA ARTESANAL.',
+        imagem: 'gabriele.gif',
+        linkCurriculo: 'http://lattes.cnpq.br/6482692652552970',
         id: 4,
     },
 ]
@@ -55,7 +55,7 @@ function changeDestaque(id) {
     showNameElement.innerHTML = membroDestaque.nome;
     showDescriptionElement.innerHTML = membroDestaque.descricao;
     // Foto do ShowMember
-    showPhotoElement.src = membroDestaque.imagem;
+    showPhotoElement.src = `/static/images/profiles/${membroDestaque.imagem}`;
     showPhotoElement.title = `Foto de ${membroDestaque.nome}`;
     // Botão do ShowMember
     showButtonElement.href = membroDestaque.linkCurriculo;
@@ -82,7 +82,7 @@ function changeDestaque(id) {
         nomeComponent.innerHTML = equipeMember.nome;
         descricaoComponent.innerHTML = equipeMember.descricao;
         // Imagem do card
-        imgComponent.src = equipeMember.imagem;
+        imgComponent.src = `/static/images/profiles/${equipeMember.imagem}`;
         imgComponent.title = `Foto de ${equipeMember.nome}`;
         // Botão do card
         buttonComponent.href = equipeMember.linkCurriculo;
@@ -93,11 +93,16 @@ function changeDestaque(id) {
 changeDestaque(idAtual);
 
 cardsEquipe.forEach(card => {
+    const botao = card.querySelector('.curriculo-btn');
+
+    // Clique no botão: abre o link e PARA AQUI
+    botao.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    // Clique no card (fora do botão)
     card.addEventListener('click', () => {
         const id = card.getAttribute('indicator');
-
         changeDestaque(id);
-
-        // aqui você coloca o que quiser fazer com esse valor
     });
 });

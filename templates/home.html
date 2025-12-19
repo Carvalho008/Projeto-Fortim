@@ -35,7 +35,8 @@
                 <div class="infos-container">
                     <h3 class="c-blue bold" id="memberShowName">Nome do pesquisador</h3>
                     <h4 class="c-blue-1" id="memberShowDescription">Descrição/autobiografia</h4>
-                    <a href="" class="btn primary" id="memberShowButton" title="Currículo do pesquisador">Ver
+                    <a href="" class="btn primary" id="memberShowButton" title="Currículo do pesquisador"
+                        target="_blank" rel="noopener noreferrer">Ver
                         currículo</a>
                 </div>
             </div>
@@ -87,20 +88,22 @@
     <footer>
         <h3 class="c-blue1 bold">Colaboradores</h3>
         <div class="apoiadores-container">
-            <div class="apoiador-card">
-                <img src="" alt="">
+            <a href="http://lattes.cnpq.br/1498864101817459" class="apoiador-card" identifier="sandro" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'images/profiles/sandro.gif' %}" alt="Foto de Sandro Neves">
                 <div class="infos-container">
                     <h5>Sandro Neves</h5>
-                    <p>Professor</p>
+                    <p>Professor e Pesquisador</p>
                 </div>
-            </div>
-            <div class="apoiador-card">
-                <img src="" alt="">
+            </a>
+            <a href="http://lattes.cnpq.br/4994826036911695" class="apoiador-card" identifier="otilia" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'images/profiles/otilia.gif' %}" alt="">
                 <div class="infos-container">
-                    <h5>Raquel</h5>
-                    <p>Professora</p>
+                    <h5>Ótilia Mônica</h5>
+                    <p>Professora e Pesquisadora</p>
                 </div>
-            </div>
+            </a>
+
+            <h6 class="c-gray1" style="min-width: 100%;text-align: center;">Clique nos cards para acessar o currículo dos colaboradores*</h6>
         </div>
         <div class="realizacao">
             <div class="title-container">
