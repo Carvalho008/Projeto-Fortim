@@ -17,6 +17,28 @@
 </head>
 
 <body>
+
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/favicon.png' %}" alt="">
+            <h4 class="bold">Projeto Fortim</h4>
+        </div>
+        <nav>
+            <a class="selected">Inicio</a>
+            <a href="/formulario" class="option">Formulário</a>
+            <a href="" class="option">Tabela</a>
+            <a href="" class="option">Perfil</a>
+            <a href="" class="btn btn-login">Fazer login</ion-icon></a>
+        </nav>
+        <h3 class="c-gray" id="drop-btn"><ion-icon name="arrow-dropdown"></ion-icon></h3>
+    </header>
+    <div class="dropdown-container" id="drop-container">
+        <a class="selected">Inicio</a>
+        <a href="/formulario" class="option">Formulário</a>
+        <a href="" class="option">Tabela</a>
+        <a href="" class="option">Perfil</a>
+    </div>
+
     <div class="introducao">
         <div class="text-container">
             <h1 class="c-white bold">Projeto de base comunitária: <span class="c-yellow">Fortim</span></h1>
@@ -120,6 +142,7 @@
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="{% static 'js/equipeHandler.js' %}"></script>
+    <script src="{% static 'js/dropdownHandler.js' %}"></script>
 </body>
 
 </html>

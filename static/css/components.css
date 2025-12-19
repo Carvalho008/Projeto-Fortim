@@ -48,6 +48,110 @@
     transition: .5s;
 }
 
+/* HEADER E DROPDOWN*/
+header {
+    display: flex;
+    align-items: center;
+    padding: var(--space-s) var(--space-l);
+    gap: var(--space-m);
+    background-color: var(--white);
+    border-bottom: 2px solid var(--gray-1);
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+header .logo-container img {
+    aspect-ratio: 1 / 1;
+    width: 35px;
+}
+
+header .logo-container h4 {
+    color: transparent;
+    background: linear-gradient(to right, var(--blue) 0%, var(--green) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+header nav {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+header nav .option,
+header nav .selected,
+.dropdown-container .option,
+.dropdown-container .selected {
+    color: var(--gray);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+}
+
+header nav .option:hover,
+.dropdown-container .option:hover {
+    color: var(--gray1);
+    transition: .3s;
+}
+
+header nav .selected,
+.dropdown-container .selected {
+    color: var(--dark);
+}
+
+header nav .btn-login {
+    padding: var(--space-s) var(--space-s);
+    background-color: transparent;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+
+header nav .btn-login:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    transition: .5s;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5px 1.5px;
+    gap: 1.5px;
+    background-color: var(--gray-1);
+    overflow: hidden;
+    transition: 1s;
+
+    display: none;
+    height: 0;
+}
+
+.dropdown-container .option,
+.dropdown-container .selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-m) var(--space-xl);
+    background-color: var(--white);
+}
+
+#drop-btn {
+    padding: var(--space-xxs);
+    cursor: pointer;
+    display: none;
+}
+
+.active {
+    display: flex;
+    height: min-content;
+}
+
 /* CARD DE EQUIPE */
 .equipe-card {
     flex: 1;
@@ -177,6 +281,22 @@
     color: var(--gray);
 }
 
+@media (max-width: 1000px) {
+    header .logo-container img {
+        width: 25px;
+    }
+
+    header nav .option,
+    header nav .selected {
+        display: none;
+    }
+
+    #drop-btn {
+        display: block;
+    }
+
+}
+
 @media (max-width: 800px) {
     .btn {
         font-size: 15px;
@@ -185,4 +305,6 @@
     .apoiador-card img {
         width: 60px;
     }
+
+
 }
