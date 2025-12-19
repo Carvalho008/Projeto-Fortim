@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto fortim - Formulário</title>
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'css/globals.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/favicon.png' %}" alt="">
+            <h4 class="bold">Projeto Fortim</h4>
+        </div>
+        <nav>
+            <a href="/" class="option">Inicio</a>
+            <a class="selected">Formulário</a>
+            <a href="" class="option">Tabela</a>
+            <a href="" class="option">Perfil</a>
+            <a href="" class="btn btn-login">Fazer login</ion-icon></a>
+        </nav>
+        <h3 class="c-gray" id="drop-btn"><ion-icon name="arrow-dropdown"></ion-icon></h3>
+    </header>
+    <div class="dropdown-container" id="drop-container">
+        <a href="/" class="option">Inicio</a>
+        <a class="selected">Formulário</a>
+        <a href="" class="option">Tabela</a>
+        <a href="" class="option">Perfil</a>
+    </div>
+
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="{% static 'js/dropdownHandler.js' %}"></script>
+</body>
+
+</html>
