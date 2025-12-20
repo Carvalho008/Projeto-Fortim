@@ -1,0 +1,113 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-xxl);
+    gap: var(--space-m);
+    background-color: var(--gray-1);
+}
+
+.form-container section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-m);
+    gap: var(--space-xs);
+    background-color: var(--white);
+    border-radius: var(--space-s);
+}
+
+.form-container section h4 {
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.form-container section .question-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+}
+
+.form-container section .question-container h5 {
+    max-width: 80%;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.form-container section .question-container .options-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--space-xxs);
+    color: var(--gray1);
+}
+
+.form-container section .question-container .options-container div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+}
+
+.form-container section .question-container .other-container {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-xxs);
+    gap: var(--space-xxs);
+    color: var(--dark);
+}
+
+/* Container de erros */
+
+.error-container {
+    color: var(--red-error);
+}
+
+.error-container li {
+    list-style: none;
+}
+
+/* Inputs */
+
+.options-container>input[type="text"],
+.options-container>input[type="number"],
+textarea {
+    display: flex;
+    align-items: center;
+    padding: var(--space-xs) var(--space-xs);
+    border: 1px solid var(--gray1);
+    border-radius: var(--space-xxs);
+    background: var(--white);
+    outline: none;
+}
+
+.form-container section .question-container .other-container input {
+    max-width: 200px;
+    display: flex;
+    padding: var(--space-xxs) var(--space-xs);
+    background: none;
+    border: none;
+    outline: none;
+
+    border-bottom: 1px solid var(--dark);
+}
+
+
+/* Botão */
+
+.form-container button {
+    background-color: var(--green-1);
+    color: var(--white);
+    border-radius: var(--space-s);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.form-container button:hover {
+    background-color: var(--green);
+    transition: .5s;
+}
+
+/* Responsividade */
+
+@media (max-width: 100px) {
+    .form-container section .question-container h5 {
+        max-width: 100%;
+    }
+}

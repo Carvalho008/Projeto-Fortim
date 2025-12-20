@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="{% static 'css/globals.css' %}">
     <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/formulario.css' %}">
 
 </head>
 
@@ -38,6 +39,318 @@
         <a href="" class="option">Perfil</a>
     </div>
 
+    <form action="" method="post" class="form-container">
+        {% csrf_token %}
+
+        <!-- Identificação -->
+        <section>
+            <h4>Identificação</h4>
+            <!-- Nome -->
+            <div class="question-container">
+                <h5>{{ form.nome_apelido.label }}</h5>
+                <div class="options-container">
+                    {{ form.nome_apelido }}
+                </div>
+                <div class="error-container">{{ form.nome_apelido.errors }}</div>
+            </div>
+            <!-- Idade -->
+            <div class="question-container">
+                <h5>{{ form.idade.label }}</h5>
+                <div class="options-container">
+                    {{ form.idade }}
+                </div>
+                <div class="error-container">{{ form.idade.errors }}</div>
+            </div>
+            <!-- Genero -->
+            <div class="question-container">
+                <h5>{{ form.genero.label }}</h5>
+                <div class="options-container">
+                    {{ form.genero }}
+                </div>
+                <div class="error-container">{{ form.genero.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Escolaridade -->
+        <section>
+            <h4>Escolaridade</h4>
+            <!-- Escolaridade -->
+            <div class="question-container">
+                <h5>{{ form.escolaridade.label }}</h5>
+                <div class="options-container">
+                    {{ form.escolaridade }}
+                </div>
+                <div class="error-container">{{ form..errors }}</div>
+            </div>
+        </section>
+
+        <!-- Tempo de Pesca -->
+        <section>
+            <h4>Tempo de atuação</h4>
+            <!-- Tempo de Pesca -->
+            <div class="question-container">
+                <h5>{{ form.tempo_pesca.label }}</h5>
+                <div class="options-container">
+                    {{ form.tempo_pesca }}
+                </div>
+                <div class="error-container">{{ form.tempo_pesca.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Renda -->
+        <section>
+            <h4>Renda</h4>
+            <!-- Pesca principal Renda -->
+            <div class="question-container">
+                <h5>{{ form.pesca_principal_renda.label }}</h5>
+                <div class="options-container">
+                    {{ form.pesca_principal_renda }}
+                </div>
+                <div class="other-container">
+                    <h6>{{ form.outra_renda.label }}</h6>{{ form.outra_renda }}
+                </div>
+                <div class="error-container">{{ form.pesca_principal_renda.errors }} {{ form.outra_renda.errors }}</div>
+            </div>
+            <!-- Renda vinda da Pesca -->
+            <div class="question-container">
+                <h5>{{ form.renda_pesca.label }}</h5>
+                <div class="options-container">
+                    {{ form.renda_pesca }}
+                </div>
+                <div class="error-container">{{ form.renda_pesca.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Familia -->
+        <section>
+            <h4>Família</h4>
+            <!-- Familiares Pescadores -->
+            <div class="question-container">
+                <h5>{{ form.familiares_pescadores.label }}</h5>
+                <div class="options-container">
+                    {{ form.familiares_pescadores }}
+                </div>
+                <div class="other-container">
+                    <h6>{{ form.quantidade_familiares.label }}</h6>{{ form.quantidade_familiares }}
+                </div>
+                <div class="error-container">{{ form.familiares_pescadores.errors }} {{ form.quantidade_familiares.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Pos-Captura -->
+        <section>
+            <h4>Pós-captura</h4>
+            <!-- Pos-Captura -->
+            <div class="question-container">
+                <h5>{{ form.atividade_pos_captura.label }}</h5>
+                <div class="options-container">
+                    {{ form.atividade_pos_captura }}
+                </div>
+                <div class="other-container">
+                    <h6>{{ form.qual_pos_captura.label }}</h6>{{ form.qual_pos_captura }}
+                </div>
+                <div class="error-container">{{ form.atividade_pos_captura.errors }} {{ form.qual_pos_captura.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Registro -->
+        <section>
+            <h4>Registro</h4>
+            <!-- Registro -->
+            <div class="question-container">
+                <h5>{{ form.possui_registro.label }}</h5>
+                <div class="options-container">
+                    {{ form.possui_registro }}
+                </div>
+                <div class="error-container">{{ form.possui_registro.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Materiais -->
+        <section>
+            <h4>Materiais de pesca</h4>
+            <!-- Materiais de Pesca -->
+            <div class="question-container">
+                <h5>{{ form.materiais.label }}</h5>
+                <div class="options-container">
+                    {{ form.materiais }}
+                </div>
+                <div class="other-container">
+                    <h6>{{ form.material_outro.label }}</h6>{{ form.material_outro }}
+                </div>
+                <div class="error-container">{{ form.materiais.errors }} {{ form.material_outro.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Sazonalidade -->
+        <section>
+            <h4>Sazonalidade</h4>
+            <!-- Meses mais produtivos -->
+            <div class="question-container">
+                <h5>{{ form.meses_mais_produtivos.label }}</h5>
+                <div class="options-container">
+                    {{ form.meses_mais_produtivos }}
+                </div>
+                <div class="error-container">{{ form.meses_mais_produtivos.errors }}</div>
+            </div>
+            <!-- Meses menos produtivos -->
+            <div class="question-container">
+                <h5>{{ form.meses_menos_produtivos.label }}</h5>
+                <div class="options-container">
+                    {{ form.meses_menos_produtivos }}
+                </div>
+                <div class="error-container">{{ form.meses_menos_produtivos.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Áreas -->
+        <section>
+            <h4>Áreas de pesca</h4>
+            <!-- Areas de pesca -->
+            <div class="question-container">
+                <h5>{{ form.zonas_pesca.label }}</h5>
+                <div class="options-container">
+                    {{ form.zonas_pesca }}
+                </div>
+                <div class="other-container">
+                    <h6>{{ form.zona_outro.label }}</h6>{{ form.zona_outro }}
+                </div>
+                <div class="error-container">{{ form.zonas_pesca.errors }} {{ form.zona_outro.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Especies -->
+        <section>
+            <h4>Espécies</h4>
+            <!-- Especies -->
+            <div class="question-container">
+                <h5>{{ form.especies_principais.label }}</h5>
+                <div class="options-container">
+                    {{ form.especies_principais }}
+                </div>
+                <div class="error-container">{{ form.especies_principais.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Percepcao -->
+        <section>
+            <h4>Percepção</h4>
+            <!-- Percepcao -->
+            <div class="question-container">
+                <h5>{{ form.percepcao_captura.label }}</h5>
+                <div class="options-container">
+                    {{ form.percepcao_captura }}
+                </div>
+                <div class="error-container">{{ form.percepcao_captura.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Conservação -->
+        <section>
+            <h4>Conservação</h4>
+            <!-- Conservação -->
+            <div class="question-container">
+                <h5>{{ form.conservacao.label }}</h5>
+                <div class="options-container">
+                    {{ form.conservacao }}
+                </div>
+                <div class="other-container">
+                    <h6>{{ form.conservacao_outro.label }}</h6>{{ form.conservacao_outro }}
+                </div>
+                <div class="error-container">{{ form.conservacao.errors }} {{ form.conservacao_outro.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Problemas -->
+        <section>
+            <h4>Problemas</h4>
+            <!-- Problemas -->
+            <div class="question-container">
+                <h5>{{ form.problemas.label }}</h5>
+                <div class="options-container">
+                    {{ form.problemas }}
+                </div>
+                <div class="other-container">
+                    <h6>{{ form.problema_outro.label }}</h6>{{ form.problema_outro }}
+                </div>
+                <div class="error-container">{{ form.problemas.errors }} {{ form.problema_outro.errors }}</div>
+            </div>
+        </section>
+        
+        <!-- Descarte -->
+        <section>
+            <h4>Descarte</h4>
+            <!-- Descarte -->
+            <div class="question-container">
+                <h5>{{ form.destino_descarte.label }}</h5>
+                <div class="options-container">
+                    {{ form.destino_descarte }}
+                </div>
+                <div class="error-container">{{ form.destino_descarte.errors }}</div>
+            </div>
+        </section>
+
+        <!-- Programas -->
+        <section>
+            <h4>Programas Ambientais</h4>
+            <!-- Materiais Guardados -->
+            <div class="question-container">
+                <h5>{{ form.materiais_guardados.label }}</h5>
+                <div class="options-container">
+                    {{ form.materiais_guardados }}
+                </div>
+                <div class="error-container">{{ form.materiais_guardados.errors }}</div>
+            </div>
+            <!-- Existe Ponto de Coleta -->
+            <div class="question-container">
+                <h5>{{ form.existe_ponto_coleta.label }}</h5>
+                <div class="options-container">
+                    {{ form.existe_ponto_coleta }}
+                </div>
+                <div class="error-container">{{ form.existe_ponto_coleta.errors }}</div>
+            </div>
+            <!-- Participaria do Programa -->
+            <div class="question-container">
+                <h5>{{ form.participaria_programa.label }}</h5>
+                <div class="options-container">
+                    {{ form.participaria_programa }}
+                </div>
+                <div class="error-container">{{ form.participaria_programa.errors }}</div>
+            </div>
+            <!-- Reaproveitamento em forma de Artesanato -->
+            <div class="question-container">
+                <h5>{{ form.reaproveitamento_artesanato.label }}</h5>
+                <div class="options-container">
+                    {{ form.reaproveitamento_artesanato }}
+                </div>
+                <div class="error-container">{{ form.reaproveitamento_artesanato.errors }}</div>
+            </div>
+        </section>
+        
+        <!-- Turismo -->
+        <section>
+            <h4>Turismo</h4>
+            <!-- Turismo e a Pesca -->
+            <div class="question-container">
+                <h5>{{ form.turismo_pesca.label }}</h5>
+                <div class="options-container">
+                    {{ form.turismo_pesca }}
+                </div>
+                <div class="error-container">{{ form.turismo_pesca.errors }}</div>
+            </div>
+            <!-- Turismo valoriza a Pesca -->
+            <div class="question-container">
+                <h5>{{ form.turismo_valoriza.label }}</h5>
+                <div class="options-container">
+                    {{ form.turismo_valoriza }}
+                </div>
+                <div class="error-container">{{ form.turismo_valoriza.errors }}</div>
+            </div>
+        </section>
+
+        <button type="submit" class="btn">Enviar</button>
+
+    </form>
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="{% static 'js/dropdownHandler.js' %}"></script>
