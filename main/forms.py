@@ -18,7 +18,7 @@ class RespostaPesquisaForm(forms.ModelForm):
             "quantidade_familiares": forms.NumberInput(attrs={"placeholder": "Quantidade"}),
             "qual_pos_captura": forms.TextInput(attrs={"placeholder": "Qual atividade"}),
             "material_outro": forms.TextInput(attrs={"placeholder": "Outro material"}),
-            "zona_outro": forms.TextInput(attrs={"placeholder": "Outra zona"}),
+            "zona_outro": forms.TextInput(attrs={"placeholder": "Outra área ou zona"}),
             "conservacao_outro": forms.TextInput(attrs={"placeholder": "Outra forma"}),
             "problema_outro": forms.TextInput(attrs={"placeholder": "Outro problema"}),
             "especies_principais": forms.Textarea(attrs={"placeholder": "Principais espécies", "rows": 2}),
@@ -100,7 +100,7 @@ class RespostaPesquisaForm(forms.ModelForm):
             "zonas_pesca": (
                 "14. Quais são as principais áreas ou zonas de pesca que você utiliza?"
             ),
-            "zona_outro": "Outra área ou zona de pesca:",
+            "zona_outro": "Outro:",
 
             "especies_principais": (
                 "15. Quais são as três principais espécies que você costuma capturar?"

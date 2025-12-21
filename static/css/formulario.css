@@ -1,7 +1,7 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    padding: var(--space-xl) var(--space-xxl);
+    padding: var(--space-xl);
     gap: var(--space-m);
     background-color: var(--gray-1);
 }
@@ -15,7 +15,7 @@
     border-radius: var(--space-s);
 }
 
-.form-container section h4 {
+.form-container section h3 {
     font-weight: bold;
     color: var(--blue);
 }
@@ -26,7 +26,7 @@
     gap: var(--space-xxs);
 }
 
-.form-container section .question-container h5 {
+.form-container section .question-container h4 {
     max-width: 80%;
     font-weight: bold;
     color: var(--black);
@@ -42,7 +42,7 @@
 .form-container section .question-container .options-container div {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xxs);
+    gap: var(--space-xs);
 }
 
 .form-container section .question-container .other-container {
@@ -71,6 +71,7 @@ textarea {
     display: flex;
     align-items: center;
     padding: var(--space-xs) var(--space-xs);
+    font-size: medium;
     border: 1px solid var(--gray1);
     border-radius: var(--space-xxs);
     background: var(--white);
