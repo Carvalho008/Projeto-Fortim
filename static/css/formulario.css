@@ -48,8 +48,12 @@
 .form-container section .question-container .other-container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 0 var(--space-xxs);
     gap: var(--space-xxs);
+}
+
+.form-container section .question-container .other-container h5 {
     color: var(--dark);
 }
 
@@ -79,7 +83,9 @@ textarea {
 }
 
 .form-container section .question-container .other-container input {
+    flex: 1;
     max-width: 200px;
+    min-width: 120px;
     display: flex;
     padding: var(--space-xxs) var(--space-xs);
     background: none;
