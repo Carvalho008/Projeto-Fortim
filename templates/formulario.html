@@ -42,6 +42,14 @@
     <form action="" method="post" class="form-container">
         {% csrf_token %}
 
+        {% if server_feedback %}
+        <section>
+            <h4 class="{{ server_feedback.style }} bold">
+                {{ server_feedback.message }}
+            </h4>
+        </section>
+        {% endif %}
+
         <!-- Identificação -->
         <section>
             <h3>Identificação</h3>
@@ -133,7 +141,9 @@
                 <div class="other-container">
                     <h5>{{ form.quantidade_familiares.label }}</h5>{{ form.quantidade_familiares }}
                 </div>
-                <div class="error-container">{{ form.familiares_pescadores.errors }} {{ form.quantidade_familiares.errors }}</div>
+                <div class="error-container">
+                    {{ form.familiares_pescadores.errors }} {{form.quantidade_familiares.errors }}
+                </div>
             </div>
         </section>
 
@@ -149,7 +159,8 @@
                 <div class="other-container">
                     <h5>{{ form.qual_pos_captura.label }}</h5>{{ form.qual_pos_captura }}
                 </div>
-                <div class="error-container">{{ form.atividade_pos_captura.errors }} {{ form.qual_pos_captura.errors }}</div>
+                <div class="error-container">{{ form.atividade_pos_captura.errors }} {{ form.qual_pos_captura.errors }}
+                </div>
             </div>
         </section>
 
@@ -276,7 +287,7 @@
                 <div class="error-container">{{ form.problemas.errors }} {{ form.problema_outro.errors }}</div>
             </div>
         </section>
-        
+
         <!-- Descarte -->
         <section>
             <h3>Descarte</h3>
@@ -326,7 +337,7 @@
                 <div class="error-container">{{ form.reaproveitamento_artesanato.errors }}</div>
             </div>
         </section>
-        
+
         <!-- Turismo -->
         <section>
             <h3>Turismo</h3>

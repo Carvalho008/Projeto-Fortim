@@ -111,6 +111,16 @@ textarea {
     transition: .5s;
 }
 
+/* Feedback do Servidor */
+
+.error {
+    color: var(--red-error);
+}
+
+.success {
+    color: var(--green);
+}
+
 /* Responsividade */
 
 @media (max-width: 100px) {

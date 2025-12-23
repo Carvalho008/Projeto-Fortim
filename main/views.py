@@ -8,17 +8,23 @@ def home(request):
     return render(request, 'home.html')
 
 def formulario(request):
+    server_feedback = False
     if request.method == "POST":
-        print("CHEGOU POST")  # 👈 TESTE 1
         form = RespostaPesquisaForm(request.POST)
         if form.is_valid():
-            print("FORM VALID")  # 👈 TESTE 2
             obj = form.save()
-            print("SALVO:", obj.id)  # 👈 TESTE 3
-            return redirect("formulario")
+            form = RespostaPesquisaForm()
+            server_feedback = {
+                "message" : 'Pesquisa salva com sucesso!',
+                "style" : 'success'
+            }
         else:
             print("ERROS:", form.errors)  # 👈 TESTE 4
+            server_feedback = {
+                "message" : 'Erro ao salvar pesquisa, por favor tente novamente',
+                "style" : 'error'
+            }
     else:
         form = RespostaPesquisaForm()
 
-    return render(request, "formulario.html", {"form": form})
+    return render(request, "formulario.html", {"form": form, "server_feedback": server_feedback})
