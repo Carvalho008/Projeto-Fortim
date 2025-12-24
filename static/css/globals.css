@@ -52,7 +52,9 @@ h4,
 h5,
 h6,
 button,
-input {
+input,
+textarea,
+label {
     font-weight: 400;
     font-family: 'Open Sans', Arial, sans-serif;
 }
@@ -159,6 +161,9 @@ img {
     color: var(--yellow1);
 }
 
+.c-red-error {
+    color: var(--red-error);
+}
 
 @media (max-width: 800px) {
     :root {
