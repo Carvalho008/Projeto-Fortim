@@ -111,6 +111,8 @@ header nav .btn-login {
     background-color: transparent;
     color: var(--blue);
     border: 2px solid var(--blue);
+    cursor: pointer;
+    transition: .5s;
 }
 
 header nav .btn-login:hover {
@@ -122,14 +124,12 @@ header nav .btn-login:hover {
 .dropdown-container {
     display: flex;
     flex-direction: column;
-    padding: 1.5px 1.5px;
-    gap: 1.5px;
     background-color: var(--gray-1);
     overflow: hidden;
-    transition: 1s;
 
-    display: none;
     height: 0;
+    visibility: hidden;
+
 }
 
 .dropdown-container .option,
@@ -148,8 +148,10 @@ header nav .btn-login:hover {
 }
 
 .active {
-    display: flex;
-    height: min-content;
+    height: auto;
+    visibility: visible;
+    padding: 1.5px 1.5px;
+    gap: 1.5px;
 }
 
 /* CARD DE EQUIPE */
