@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login as auth_login
 from .forms import RespostaPesquisaForm
 from .models import RespostaPesquisa
 
@@ -28,3 +29,20 @@ def formulario(request):
         form = RespostaPesquisaForm()
 
     return render(request, "formulario.html", {"form": form, "server_feedback": server_feedback})
+
+def login(request):
+    error = False
+
+    if request.method == "POST":
+        username = request.POST.get("user")
+        password = request.POST.get("password")
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            return redirect("/")  # ou qualquer página pós-login
+        else:
+            error = "Usuário ou senha inválidos"
+
+    return render(request, "login.html", {"error": error})

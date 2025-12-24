@@ -1,0 +1,99 @@
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    padding: var(--space-xl) var(--space-l);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white1);
+}
+
+main form {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-l);
+    gap: var(--space-l);
+    background-color: var(--white);
+    border-radius: var(--space-xs);
+    border: 1.5px solid var(--gray1);
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* Inputs */
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+}
+
+.input-container label {
+    font-size: 16px;
+    color: var(--black);
+}
+
+.input-container input {
+    display: flex;
+    padding: var(--space-s);
+    font-size: 20px;
+    background: var(--white1);
+    border-radius: var(--space-xxs);
+    border: 1px solid var(--gray-1);
+    outline: none;
+}
+
+.input-container input::placeholder {
+    color: var(--gray);
+}
+
+/* Botão */
+
+.login-btn {
+    width: 100%;
+    background-color: var(--green-1);
+    color: var(--white);
+    border-radius: var(--space-xxs);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.login-btn:hover {
+    background-color: var(--green);
+    transition: .5s;
+}
+
+/* Mensagem de erro */
+
+.error-message {
+    color: var(--red-error);
+    text-align: center;
+    margin-top: -10px;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .input-container label {
+        font-size: 15px;
+    }
+
+    .input-container input {
+        font-size: 18px;
+    }
+}
