@@ -26,8 +26,11 @@
         <nav>
             <a href="/" class="option">Inicio</a>
             <a href="/formulario" class="option">Formulário</a>
+
+            {% if user.is_authenticated %}
             <!-- <a href="" class="option">Tabela</a> -->
-            <!-- <a href="" class="option">Perfil</a> -->
+            <a href="/perfil" class="option">Perfil</a>
+            {% endif %}
             <a class="btn btn-login">Fazer login</ion-icon></a>
         </nav>
         <h3 class="c-gray" id="drop-btn"><ion-icon name="arrow-dropdown"></ion-icon></h3>
@@ -35,8 +38,11 @@
     <div class="dropdown-container" id="drop-container">
         <a href="/" class="option">Inicio</a>
         <a href="/formulario" class="option">Formulário</a>
+
+        {% if user.is_authenticated %}
         <!-- <a href="" class="option">Tabela</a> -->
-        <!-- <a href="" class="option">Perfil</a> -->
+        <a href="/perfil" class="option">Perfil</a>
+        {% endif %}
     </div>
 
     <main>

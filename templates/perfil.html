@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto fortim - Perfil</title>
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'css/globals.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/favicon.png' %}" alt="">
+            <h4 class="bold">Projeto Fortim</h4>
+        </div>
+        <nav>
+            <a href="/" class="option">Inicio</a>
+            <a href="/formulario" class="option">Formulário</a>
+
+            {% if user.is_authenticated %}
+            <!-- <a href="" class="option">Tabela</a> -->
+            <a class="selected">Perfil</a>
+            {% endif %}
+            <a href="/login" class="btn btn-login">Fazer login</ion-icon></a>
+        </nav>
+        <h3 class="c-gray" id="drop-btn"><ion-icon name="arrow-dropdown"></ion-icon></h3>
+    </header>
+    <div class="dropdown-container" id="drop-container">
+        <a href="/" class="option">Inicio</a>
+        <a href="/formulario" class="option">Formulário</a>
+        {% if user.is_authenticated %}
+        <!-- <a href="" class="option">Tabela</a> -->
+        <a class="selected">Perfil</a>
+        {% endif %}
+    </div>
+
+    <main>
+        {% if user.is_authenticated %}
+        <!-- Se usuário logado -->
+        <section>
+            <div class="header-user">
+                <img alt="">
+                <div>
+                    <h4 class="c-black bold">{{ user.get_full_name|default:user.username }}</h4>
+                    <p class="c-gray">{{ user.username }}</p>
+                </div>
+            </div>
+            <span class="divisor"></span>
+            <div class="infos-container">
+                <h5 class="c-black">Nome: <span class="c-gray1">{{ user.first_name|default:"-" }}</span></h5>
+                <h5 class="c-black">Sobrenome: <span class="c-gray1">{{ user.last_name|default:"-" }}</span></h5>
+                <h5 class="c-black">Email: <span class="c-gray1">{{ user.email|default:"Não informado" }}</span></h5>
+                <h5 class="c-black">Entrou em: <span class="c-gray1">{{ user.date_joined|date:"d/m/Y" }}</span></h5>
+                <h5 class="c-black">Última sessão ativa em:
+                    <span class="c-gray1">{{ user.last_login|date:"d/m/Y - H:i"|default:"Primeiro acesso" }}</span>
+                </h5>
+
+                {% if user.is_staff or user.is_superuser %}
+                <span class="divisor"></span>
+                {% endif %}
+
+                {% if user.is_staff %}
+                <h5 class="c-green-1">Faz parte da equipe</h5>
+                {% endif %}
+
+                {% if user.is_superuser %}
+                <h5 class="c-green-1">É administrador</h5>
+                {% endif %}
+            </div>
+            <span class="divisor"></span>
+            <div class="options-container">
+                <a href="/"><ion-icon name="home"></ion-icon> Voltar para o início</a>
+                <a href="/formulario"><ion-icon name="list"></ion-icon> Ir para o formulário</a>
+                <!-- <a href="/tabela"><ion-icon name="information-circle"></ion-icon> Ir para a tabela de pesquisas</a> -->
+
+                {% if user.is_superuser %}
+                <a href="/admin"><ion-icon name="lock"></ion-icon> Acessar o painel administrativo</a>
+                {% endif %}
+            </div>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn logout-btn">Encerrar sessão</button>
+            </form>
+
+        </section>
+        {% else %}
+        <!-- Se usuário NÃO logado -->
+        <section>
+            <h2 class="c-black bold">Você não está logado</h2>
+            <h4 class="c-gray">Por favor faça login para acessar essa tela</h4>
+            <a href="/login" class="btn primary">Fazer login</a>
+        </section>
+        {% endif %}
+    </main>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="{% static 'js/dropdownHandler.js' %}"></script>
+</body>
+
+</html>

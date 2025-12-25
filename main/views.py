@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login, logout
 from .forms import RespostaPesquisaForm
 from .models import RespostaPesquisa
 
@@ -30,6 +30,9 @@ def formulario(request):
 
     return render(request, "formulario.html", {"form": form, "server_feedback": server_feedback})
 
+def perfil(request):
+    return render(request, "perfil.html")
+
 def login(request):
     error = False
 
@@ -41,8 +44,13 @@ def login(request):
 
         if user is not None:
             auth_login(request, user)
-            return redirect("/")  # ou qualquer página pós-login
+            return redirect("/perfil")  # ou qualquer página pós-login
         else:
-            error = "Usuário ou senha inválidos"
+            error = "Usuário ou senha inválidos, por favor tente novamente"
 
     return render(request, "login.html", {"error": error})
+
+def logout_view(request):
+    if request.method == "POST":
+        logout(request)
+    return redirect("/")

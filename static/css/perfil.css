@@ -1,0 +1,124 @@
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl);
+    gap: var(--space-m);
+    background-color: var(--white1);
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-l) var(--space-m);
+    gap: var(--space-l);
+    background-color: var(--white);
+    border-radius: var(--space-s);
+    overflow: hidden;
+}
+
+/* Cabeçalho de usuário */
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+.header-user img {
+    aspect-ratio: 1 / 1;
+    width: var(--space-xl);
+    background-color: var(--gray-1);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.header-user div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xxs);
+}
+
+.divisor {
+    height: 2px;
+    width: 100%;
+    background-color: var(--white1);
+    border-radius: 2px;
+}
+
+/* Informações sobre o usuário */
+
+.infos-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-s) var(--space-m);
+    gap: var(--space-xxs);
+    border-radius: var(--space-xxs);
+    border: 1.5px solid var(--gray-1);
+    overflow: hidden;
+}
+
+.infos-container .divisor {
+    background-color: var(--gray-1);
+    margin: 5px 0;
+}
+
+/* Opções de navegação */
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-s);
+    gap: var(--space-xs);
+    border-radius: var(--space-xxs);
+    border: 1.5px solid var(--gray-1);
+    overflow: hidden;
+}
+
+.options-container a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxs);
+    font-size: 20px;
+    color: var(--gray);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.options-container a:hover {
+    color: var(--blue);
+    transition: .5s;
+}
+
+/* Botão de logout */
+
+.logout-btn {
+    width: 100%;
+    background-color: var(--red-error);
+    color: var(--white);
+    border-radius: var(--space-xxs);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logout-btn:hover {
+    opacity: 0.8;
+    transition: .5s;
+}
+
+@media (max-width: 800px) {
+    .options-container a {
+        font-size: 18px;
+    }
+}
