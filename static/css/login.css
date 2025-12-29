@@ -7,11 +7,6 @@ body {
     flex-direction: column;
 }
 
-body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
 main {
     flex: 1;
     display: flex;
