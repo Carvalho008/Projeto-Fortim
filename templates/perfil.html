@@ -28,7 +28,7 @@
             <a href="/formulario" class="option">Formulário</a>
 
             {% if user.is_authenticated %}
-            <!-- <a href="" class="option">Tabela</a> -->
+            <a href="/tabela" class="option">Tabela</a>
             <a class="selected">Perfil</a>
             {% endif %}
             <a href="/login" class="btn btn-login">Fazer login</ion-icon></a>
@@ -39,7 +39,7 @@
         <a href="/" class="option">Inicio</a>
         <a href="/formulario" class="option">Formulário</a>
         {% if user.is_authenticated %}
-        <!-- <a href="" class="option">Tabela</a> -->
+        <a href="/tabela" class="option">Tabela</a>
         <a class="selected">Perfil</a>
         {% endif %}
     </div>
@@ -81,7 +81,7 @@
             <div class="options-container">
                 <a href="/"><ion-icon name="home"></ion-icon> Voltar para o início</a>
                 <a href="/formulario"><ion-icon name="list"></ion-icon> Ir para o formulário</a>
-                <!-- <a href="/tabela"><ion-icon name="information-circle"></ion-icon> Ir para a tabela de pesquisas</a> -->
+                <a href="/tabela"><ion-icon name="information-circle"></ion-icon> Ir para a tabela de pesquisas</a>
 
                 {% if user.is_superuser %}
                 <a href="/admin"><ion-icon name="lock"></ion-icon> Acessar o painel administrativo</a>
