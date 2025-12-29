@@ -33,6 +33,18 @@ def formulario(request):
 def perfil(request):
     return render(request, "perfil.html")
 
+def tabela(request):
+    # Se não estiver logado, manda pro login
+    if not request.user.is_authenticated:
+        return redirect('/login')
+
+    # Respostas em ordem alfabética (pelo nome)
+    respostas = RespostaPesquisa.objects.all().order_by('nome_apelido')
+
+    return render(request, 'tabela.html', {
+        'respostas': respostas
+    })
+
 def login(request):
     error = False
 

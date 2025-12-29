@@ -1,0 +1,237 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto fortim - Tabela</title>
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'css/globals.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tabela.css' %}">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="{% static 'images/favicon.png' %}" alt="">
+            <h4 class="bold">Projeto Fortim</h4>
+        </div>
+        <nav>
+            <a href="/" class="option">Inicio</a>
+            <a href="/formulario" class="option">Formulário</a>
+
+            {% if user.is_authenticated %}
+            <a class="selected">Tabela</a>
+            <a href="/perfil" class="option">Perfil</a>
+            {% endif %}
+            <a class="btn btn-login">Fazer login</ion-icon></a>
+        </nav>
+        <h3 class="c-gray" id="drop-btn"><ion-icon name="arrow-dropdown"></ion-icon></h3>
+    </header>
+    <div class="dropdown-container" id="drop-container">
+        <a href="/" class="option">Inicio</a>
+        <a href="/formulario" class="option">Formulário</a>
+
+        {% if user.is_authenticated %}
+        <a class="selected">Tabela</a>
+        <a href="/perfil" class="option">Perfil</a>
+        {% endif %}
+    </div>
+
+    <main class="pesquisas">
+        <h2 class="c-black bold">Pesquisas</h2>
+        <span class="divisor"></span>
+        <div class="respostas-wrapper">
+            <div class="respostas-container">
+                {% if respostas %}
+
+                {% for r in respostas %}
+                <div class="resposta-box">
+
+                    <!-- HEADER -->
+                    <div class="resposta-header" indicator="{{ r.id }}">
+                        <h6>{{ forloop.counter }}°</h6>
+                        <span class="divisor"></span>
+                        <h6>{{ r.nome_apelido }}</h6>
+                        <h5><ion-icon name="arrow-dropdown"></ion-icon></h5>
+                    </div>
+
+                    <!-- BODY -->
+                    <div class="resposta-body" indicator="{{ r.id }}">
+                        <ol>
+                            <li>Nome: <span>{{ r.nome_apelido }}</span></li>
+                            <li>Idade: <span>{{ r.idade }} anos</span></li>
+                            <li>Gênero: <span>{{ r.genero }}</span></li>
+                            <li>Escolaridade: <span>{{ r.escolaridade }}</span></li>
+                            <li>Tempo de dedicação à pesca: <span>{{ r.tempo_pesca }} anos</span></li>
+
+                            <li>
+                                Pesca como principal fonte de renda:
+                                <span>
+                                    {{ r.pesca_principal_renda }}
+                                    {% if r.outra_renda %}
+                                    : {{ r.outra_renda }}
+                                    {% endif %}
+                                </span>
+                            </li>
+
+                            <li>Quanto da renda vem da pesca: <span>{{ r.renda_pesca }}</span></li>
+
+                            <li>
+                                Familiares envolvidos com a pesca:
+                                <span>
+                                    {{ r.familiares_pescadores }}
+                                    {% if r.quantidade_familiares %}
+                                    : {{ r.quantidade_familiares }}
+                                    {% endif %}
+                                </span>
+                            </li>
+
+                            <li>
+                                Atividade pós-captura:
+                                <span>
+                                    {{ r.atividade_pos_captura }}
+                                    {% if r.qual_pos_captura %}
+                                    : {{ r.qual_pos_captura }}
+                                    {% endif %}
+                                </span>
+                            </li>
+
+                            <li>Possui registro: <span>{{ r.possui_registro }}</span></li>
+
+                            <li>
+                                Materiais que usa:
+                                <span>
+                                    {% for m in r.materiais.all %}
+                                    {{ m }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                    —
+                                    {% endfor %}
+                                    {% if r.material_outro %}
+                                    - {{ r.material_outro }}
+                                    {% endif %}
+                                </span>
+                            </li>
+
+                            <li>
+                                Meses mais lucrativos:
+                                <span>
+                                    {% for mes in r.meses_mais_produtivos.all %}
+                                    {{ mes }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                    —
+                                    {% endfor %}
+                                </span>
+                            </li>
+
+                            <li>
+                                Meses menos lucrativos:
+                                <span>
+                                    {% for mes in r.meses_menos_produtivos.all %}
+                                    {{ mes }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                    —
+                                    {% endfor %}
+                                </span>
+                            </li>
+
+                            <li>
+                                Áreas em que pesca:
+                                <span>
+                                    {% for z in r.zonas_pesca.all %}
+                                    {{ z }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                    —
+                                    {% endfor %}
+                                    {% if r.zona_outro %}
+                                    - {{ r.zona_outro }}
+                                    {% endif %}
+                                </span>
+                            </li>
+
+                            <li>Principais espécies que captura: <span>{{ r.especies_principais }}</span></li>
+
+                            <li>Avaliação da captura nos últimos 5 anos: <span>{{ r.percepcao_captura }}</span></li>
+
+                            <li>
+                                Conservação do pescado pós pesca:
+                                <span>
+                                    {% for c in r.conservacao.all %}
+                                    {{ c }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                    —
+                                    {% endfor %}
+                                    {% if r.conservacao_outro %}
+                                    - {{ r.conservacao_outro }}
+                                    {% endif %}
+                                </span>
+                            </li>
+
+                            <li>
+                                Principais problemas ou preocupações:
+                                <span>
+                                    {% for p in r.problemas.all %}
+                                    {{ p }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                    —
+                                    {% endfor %}
+                                    {% if r.problema_outro %}
+                                    - {{ r.problema_outro }}
+                                    {% endif %}
+
+                                </span>
+                            </li>
+
+                            <li>
+                                Descarte dos materiais de pesca:
+                                <span>
+                                    {% for d in r.destino_descarte.all %}
+                                    {{ d }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                    —
+                                    {% endfor %}
+                                </span>
+                            </li>
+
+                            <li>Possui materiais de pesca inutilizados guardados:
+                                <span>{{r.materiais_guardados}}</span>
+                            </li>
+                            <li>Comunidade possui ponto de coleta: <span>{{ r.existe_ponto_coleta }}</span></li>
+                            <li>Participaria de um programa de coleta: <span>{{ r.participaria_programa }}</span></li>
+                            <li>Reaproveita materiais em artesanato: <span>{{ r.reaproveitamento_artesanato }}</span>
+                            </li>
+                            <li>Turismo ocorre junto com a pesca: <span>{{ r.turismo_pesca }}</span></li>
+                            <li>Turismo valoriza a pesca: <span>{{ r.turismo_valoriza }}</span></li>
+                        </ol>
+                    </div>
+
+                </div>
+                {% endfor %}
+
+                {% else %}
+
+                <div class="nao-disponivel">
+                    <h6 class="c-gray">Sem pesquisas disponíveis</h6>
+                </div>
+
+                {% endif %}
+            </div>
+            <button class="btn" id="showMoreBtn" title="Mostrar tudo">
+                <h4><ion-icon name="arrow-dropdown"></ion-icon></h4>
+            </button>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="{% static 'js/dropdownHandler.js' %}"></script>
+    <script src="{% static 'js/respostasHandler.js' %}"></script>
+</body>
+
+</html>
