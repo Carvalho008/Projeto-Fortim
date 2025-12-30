@@ -7,7 +7,7 @@ let idAtual = 0
 
 const listaEquipe = [
     {
-        nome: 'Márcia Vieira',
+        nome: 'Márcia Viana',
         descricao: 'Professora e Orientadora do projeto. Doutora em Educação pela Universidade Estadual Paulista Júlio de Mesquita Filho - UNESP (2017),Graduada em Administração pela UFC (1993), Mestra em Logística e Pesq. Operacional pela UFC,(2009),Especialista em Formação Pedagógica para Docência Profissional e Tecnológica pelo IFCE (2020) e Formação em Procedimentos Básicos para o atendimento Educacional Especializado (AEE) pelo IFTM (2018). ',
         imagem: 'marcia.gif',
         linkCurriculo: 'http://lattes.cnpq.br/4324545790655825',
