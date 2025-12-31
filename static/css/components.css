@@ -260,6 +260,15 @@ header nav .btn-login:hover {
     text-decoration: none;
 }
 
+.apoiador-card:hover {
+    transform: scale(1.05);
+}
+
+.apoiador-card,
+.apoiador-card:hover {
+    transition: .3s;
+}
+
 .apoiador-card img {
     aspect-ratio: 1 / 1;
     width: 70px;
