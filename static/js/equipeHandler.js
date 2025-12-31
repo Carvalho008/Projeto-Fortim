@@ -15,7 +15,7 @@ const listaEquipe = [
     },
     {
         nome: 'Lian Carvalho',
-        descricao: 'Pesquisador FUNCAP PROGRAMA JOVEM CIENTISTA DA PESCA ARTESANAL, Técnico em Informática pelo IFCE Campus Aracati(2023-2025)',
+        descricao: 'Lian Carvalho da Costa, Técnico em Informática pelo IFCE Campus Aracati(2023 - 2025), Desenvolvedor e Designer de sistemas Web, Pesquisador FUNCAP PROGRAMA JOVEM CIENTISTA DA PESCA ARTESANAL.',
         imagem: 'lian.gif',
         linkCurriculo: 'http://lattes.cnpq.br/6417304866666966',
         id: 1,
