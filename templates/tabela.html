@@ -31,7 +31,7 @@
             <a class="selected">Tabela</a>
             <a href="/perfil" class="option">Perfil</a>
             {% endif %}
-            <a class="btn btn-login">Fazer login</ion-icon></a>
+            <a href="/login" class="btn btn-login">Fazer login</ion-icon></a>
         </nav>
         <h3 class="c-gray" id="drop-btn"><ion-icon name="arrow-dropdown"></ion-icon></h3>
     </header>
@@ -228,6 +228,17 @@
             </button>
         </div>
     </main>
+
+    {% if respostas %}
+    <div class="overall-infos">
+        {% for info in infos %}
+        <div class="info {{ info.style }}">
+            <h4>{{ info.title }}</h4>
+            <h3>{{ info.value }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="{% static 'js/dropdownHandler.js' %}"></script>

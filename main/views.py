@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login as auth_login, logout
 from .forms import RespostaPesquisaForm
 from .models import RespostaPesquisa
 
+from .functions import get_infos_tabela
+
 # Create your views here.
 
 def home(request):
@@ -40,9 +42,14 @@ def tabela(request):
 
     # Respostas em ordem alfabética (pelo nome)
     respostas = RespostaPesquisa.objects.all().order_by('nome_apelido')
+    
+    # Informações/Overall da tabela
+    
+    infos = get_infos_tabela()
 
     return render(request, 'tabela.html', {
-        'respostas': respostas
+        'respostas': respostas,
+        'infos': infos
     })
 
 def login(request):

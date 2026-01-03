@@ -1,3 +1,4 @@
+/* CONTAINERS GERAIS */
 .pesquisas {
     display: flex;
     flex-direction: column;
@@ -64,7 +65,6 @@
 
 
 /* CÉLULA DE PESQUISA */
-
 .resposta-box {
     display: flex;
     flex-direction: column;
@@ -72,7 +72,6 @@
 }
 
 /* Cabeçalho */
-
 .resposta-header {
     display: flex;
     align-items: center;
@@ -153,6 +152,70 @@
     transform: rotate(180deg);
     transition: .3s;
 }
+
+/* OVERALL DE INFORMAÇÕES */
+.overall-infos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--space-xl);
+    gap: var(--space-s);
+    background-color: var(--white);
+    border-top: 2px solid var(--gray1);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-m) var(--space-m);
+    gap: var(--space-xs);
+    background-color: var(--white);
+    border-radius: var(--space-xxs);
+    border: 2px solid var(--green-1);
+}
+
+.info h4 {
+    color: var(--gray1);
+}
+
+.info h3 {
+    color: var(--dark);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilos de cada informação */
+.s-full {
+    flex: 5;
+    min-width: 100%;
+    background-color: var(--green-1);
+}
+
+.s-full h4,
+.s-full h3 {
+    color: var(--white);
+}
+
+.s-4 {
+    flex: 4;
+    min-width: 60%;
+}
+
+.s-3 {
+    flex: 3;
+    min-width: 50%;
+}
+
+.s-2 {
+    flex: 2;
+    min-width: fit-content;
+}
+
+.s-1 {
+    flex: 1;
+    min-width: fit-content;
+}
+
 
 @media (max-width: 800px) {
     .resposta-body ol li {
